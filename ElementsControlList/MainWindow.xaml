@@ -1,0 +1,85 @@
+﻿<Window x:Class="ElementsControlList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElementsControlList"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="549.222" Width="665.208" Loaded="winload">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="475*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="146*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="456" Margin="10,35,0,0" VerticalAlignment="Top" Width="617" Grid.ColumnSpan="4">
+            <TabItem Header="ListBox">
+                <Grid Background="Aqua" Margin="0,0,-366.4,-36">
+                    <Grid Margin="10,10,-36,-36">
+                        <ListBox Name="list" Height="399" Margin="10,10,-286.6,0" VerticalAlignment="Top" SelectionChanged="list_SelectionChanged" HorizontalAlignment="Left" Width="581">
+                            <ListBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Вставить"/>
+                                    <MenuItem Header="Копировать"/>
+                                    <MenuItem Header="Вырезать"/>
+                                    <MenuItem Header="Удалить"/>
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+                        </ListBox>
+                        <ComboBox Name="comBox" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="192" IsEditable="True" DisplayMemberPath="Name" SelectionChanged="itemSelected" StaysOpenOnEdit="True">
+                            <ComboBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Вставить"/>
+                                    <MenuItem Header="Копировать"/>
+                                    <MenuItem Header="Удалить"/>
+                                </ContextMenu>
+
+                            </ComboBox.ContextMenu>
+                        </ComboBox>
+                        <TextBox x:Name="newNameOfCity" HorizontalAlignment="Left" Height="32" Margin="306,254,0,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="178"/>
+                        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Margin="306,368,0,0" VerticalAlignment="Top" Width="75" Click="add_Click"/>
+                        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="397,368,0,0" VerticalAlignment="Top" Width="87" Click="delete_Click"/>
+                        <TextBox x:Name="newPopukation" HorizontalAlignment="Left" Height="33" Margin="306,291,0,0" TextWrapping="Wrap" Text="Population" VerticalAlignment="Top" Width="178"/>
+                        <TextBox x:Name="newRegion" HorizontalAlignment="Left" Height="34" Margin="306,329,0,0" TextWrapping="Wrap" Text="Region" VerticalAlignment="Top" Width="178"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Listview">
+                <Grid Background="AliceBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28*"/>
+                        <ColumnDefinition Width="583*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="376" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="0,0,7.6,0">
+            <MenuItem Header="File">
+                <MenuItem Header="Open Project"/>
+                <MenuItem Header="New Project">
+                    <MenuItem Header="WinForms"/>
+                    <MenuItem Header="Wpf"/>
+                </MenuItem>
+                <MenuItem Header="Version" Click="MenuItem_Click"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="View"/>
+            <Separator/>
+            <MenuItem Header="Exit" Click="MenuItem_Click_1"/>
+            <Separator/>
+            <MenuItem Header="Clear"/>
+
+        </Menu>
+
+    </Grid>
+</Window>
